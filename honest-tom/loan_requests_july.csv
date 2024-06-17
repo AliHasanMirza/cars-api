@@ -1,0 +1,9 @@
+status,seniority,home,time,age,marital,records,job,expenses,income,assets,debt,amount,price
+ukn,15,owner,60,50,widow,yes,freelance,35,25,15000,2520,880,951
+ukn,2,owner,60,33,married,no,fixed,35,146,8000,2000,1000,1844
+ukn,1,parents,30,22,single,no,fixed,35,111,0,0,775,1100
+ukn,2,rent,48,29,single,no,fixed,60,250,0,0,1000,1179
+ukn,0,rent,60,28,married,no,fixed,76,155,0,0,800,1218
+ukn,0,parents,24,21,single,no,fixed,35,160,0,0,900,1681
+ukn,1,rent,36,24,married,no,fixed,59,135,0,0,650,1136
+ukn,1,parents,36,33,married,no,fixed,35,200,0,0,600,1580

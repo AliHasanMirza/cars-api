@@ -1,0 +1,140 @@
+swagger: "2.0"
+info:
+  title: Car Inventory & Pricing API
+  description: API for retrieving car inventory, price estimates, and purchasing vehicles.
+  version: "1.0.0"
+host: your-api-host.com  # Placeholder
+basePath: /
+schemes:
+  - https  # Or http
+paths:
+  /price:
+    post:
+      summary: Get price estimate for a car based on details
+      description: Provide car details to receive an estimated price
+      consumes:
+        - application/json
+      parameters:
+        - in: body
+          name: body
+          description: Car details (e.g., make, model, year, mileage)
+          required: true
+          schema:
+            type: object
+            properties:
+              make:
+                type: string
+              model:
+                type: string
+              year:
+                type: integer
+              mileage:
+                type: integer
+      responses:
+        200:
+          description: Successful price estimation
+          schema:
+            type: object
+            properties:
+              estimatedPrice:
+                type: number
+
+  /inventory/{make}:
+    get:
+      summary: Get all available models for a given make
+      parameters:
+        - in: path
+          name: make
+          description: Car make (e.g., Toyota, Ford)
+          required: true
+          type: string
+      responses:
+        200:
+          description: List of available models
+
+  /inventory/{make}/{model}:
+    get:
+      summary: Get all available years for a given make and model
+      parameters:
+        - in: path
+          name: make
+          description: Car make
+          required: true
+          type: string
+        - in: path
+          name: model
+          description: Car model
+          required: true
+          type: string
+      responses:
+        200:
+          description: List of available years
+
+  /inventory/{make}/{model}/{year}:
+    get:
+      summary: Get available cars for a given make, model, and year
+      parameters:
+        - in: path
+          name: make
+          description: Car make
+          required: true
+          type: string
+        - in: path
+          name: model
+          description: Car model
+          required: true
+          type: string
+        - in: path
+          name: year
+          description: Car year
+          required: true
+          type: integer
+      responses:
+        200:
+          description: List of available cars
+
+  /price/{make}/{model}/{year}:
+    get:
+      summary: Get price for a specific car
+      parameters:
+        - in: path
+          name: make
+          description: Car make
+          required: true
+          type: string
+        - in: path
+          name: model
+          description: Car model
+          required: true
+          type: string
+        - in: path
+          name: year
+          description: Car year
+          required: true
+          type: integer
+      responses:
+        200:
+          description: Car price details
+
+  /buy/{make}/{model}/{year}:
+    post:
+      summary: Purchase a specific car
+      parameters:
+        - in: path
+          name: make
+          description: Car make
+          required: true
+          type: string
+        - in: path
+          name: model
+          description: Car model
+          required: true
+          type: string
+        - in: path
+          name: year
+          description: Car year
+          required: true
+          type: integer
+      responses:
+        200:
+          description: Successful purchase confirmation
