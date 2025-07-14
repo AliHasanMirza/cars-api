@@ -9,7 +9,7 @@ When you're done, you can delete the content in this README and update the file 
 ## Week One-Three
 
 - Read the introductory chapter (all)
-- Implement the car pricing model in Jupyter (Ali)
+- Implement the car pricing model in Jupyter (Ali Hasan Mirza)
 - Add an HTTP API in front of the pricing model (Thaggard)
 - Deploy the car pricing Jupyter Notebook to Docker (Reed)
 
